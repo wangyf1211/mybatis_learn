@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="student" class="com.demo.pojo.Student">
+    <property name="name" value="wyf"/>
+    <property name="address" ref="address"/>
+    <property name="info">
+        <!--<value>-->
+            <!--id=1832168-->
+            <!--age=24-->
+            <!--birthday=1996-12-11-->
+        <!--</value>-->
+        <props>
+            <prop key="id">1832168</prop>
+            <prop key="age">24</prop>
+            <prop key="birthday">1996-12-11</prop>
+        </props>
+    </property>
+    <property name="books">
+        <array>
+            <value>Little Prince</value>
+            <value>Pride and Prejudice</value>
+        </array>
+    </property>
+    <property name="hobbies">
+        <list>
+            <value>swim</value>
+            <value>sing</value>
+        </list>
+    </property>
+    <property name="card">
+        <map>
+            <entry key="aaa" value="111"/>
+            <entry key="bbb" value="222"/>
+        </map>
+    </property>
+    <property name="partner">
+        <null></null>
+    </property>
+    <property name="games">
+        <set>
+            <value>Human</value>
+            <value>Chinese Parents</value>
+        </set>
+    </property>
+</bean>
+    <bean id="address" class="com.demo.pojo.Address">
+        <property name="value" value="Nanjing Road"/>
+    </bean>
+</beans>
