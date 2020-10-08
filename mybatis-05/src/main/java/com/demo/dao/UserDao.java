@@ -1,5 +1,6 @@
 package com.demo.dao;
 
+import com.demo.domain.QueryVO;
 import com.demo.domain.User;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public interface UserDao {
     User findById(int userId);
 
     List<User> findByName(String name);
+
+    List<User> findByQueryVO(QueryVO queryVO);
 
     int getCount();
 }

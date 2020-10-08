@@ -27,4 +27,7 @@
     <select id="getCount" resultType="int">
         select count(*) from user
     </select>
+    <select id="findByQueryVO" parameterType="com.demo.domain.QueryVO" resultType="com.demo.domain.User">
+        select * from user where username like #{user.username}
+    </select>
 </mapper>

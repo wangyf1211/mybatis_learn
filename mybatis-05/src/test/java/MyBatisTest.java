@@ -1,4 +1,5 @@
 import com.demo.dao.UserDao;
+import com.demo.domain.QueryVO;
 import com.demo.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -100,5 +101,18 @@ public class MyBatisTest {
         // 5. 使用代理对象执行方法
         int count = userDao.getCount();
         System.out.println("count: " + count);
+    }
+
+    @Test
+    public void testFindByName_QueryVo() {
+        // 5. 使用代理对象执行方法
+        QueryVO queryVO = new QueryVO();
+        User user = new User();
+        user.setUsername("%小%");
+        queryVO.setUser(user);
+        List<User> users = userDao.findByQueryVO(queryVO);
+        for (User u : users) {
+            System.out.println(u);
+        }
     }
 }
